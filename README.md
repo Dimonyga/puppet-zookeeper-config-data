@@ -40,13 +40,35 @@ zkdel('/path/foo', 86400, ['/path', 1])
                           # contain >= 1 children after the deletion.
 ```
 
-To use these functions, you *must* have defined two variables as facts (sorry).
-edit lib/facter/zk_conf.rb and set the values for zk_server and zk_port. This is
-the only way custom functions can access variables - they must be facts. If you
-don't use facts, just hardcode these values in zkput.rb and zkconf.rb.
-
 These functions store zk data as persistent, non-sequential, and overwrites any
 existing data at the specified node.
+
+To use these functions, you *must* have defined two variables as facts (sorry).
+Create an empty class called custom_facts (can be called anything you want) or add these facts
+to your existing facts path/class.
+The custom_facts/manifests/init.pp should be like this:
+```
+#
+# Just an empty class to load the custom facts
+#
+class custom_facts {}
+```
+Create this file: custom_facts/lib/facter/zookeeper.rb with the following contents (fill in your own zookeeper server address):
+```
+Facter.add("zk_server") do
+    setcode do
+        'zookeeper.example.com'
+    end
+end
+Facter.add("zk_port") do
+    setcode do
+        '2181'
+    end
+end
+```
+Now include this custom_facts class with the nodes who also use this puppet-zookeeper-config class.
+This is the only way custom functions can access variables - they must be facts. If you
+don't want to use facts, then you'll have to hardcode the zookeeper server address in the zkput, zkget and zkdel functions.
 
 An Example
 ----------
