@@ -1,6 +1,6 @@
 {
 "name": "conclusionMC/puppet-zookeeper-config-data",
-"version": "1.0.0",
+"version": "1.0.1",
 "author": "manos",
 "summary": "This module enables other classes to get of put data directly from and to zookeeper without using hiera",
 "license": "Apache-2.0",
