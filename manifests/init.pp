@@ -13,7 +13,7 @@ class zk_puppet inherits zk_puppet::params {
         provider => $puppetgem,
     }
 
-    $additional_packages = [ $rubydevel_package, $patch_package , $gcc_package ]
+    $additional_packages = [ $rubydevel_package, $patch_package , $gcc_package, $make_package ]
     package { $additional_packages:
         ensure => present,
         before => Package['zk']

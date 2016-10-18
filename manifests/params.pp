@@ -9,11 +9,13 @@ class zk_puppet::params {
       $rubydevel_package = "ruby-dev"
       $patch_package = "patch"
       $gcc_package = "gcc"
+      $make_package = "make"
     }
     default:  {
       $rubydevel_package = "ruby-devel"
       $patch_package = "patch"
       $gcc_package = "gcc"
+      $make_package = "make"
     }
   }
 }
