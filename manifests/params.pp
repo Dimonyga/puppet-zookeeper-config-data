@@ -1,4 +1,9 @@
 class zk_puppet::params {
+  if $::puppetversion and versioncmp($::puppetversion, '4.0.0') >= 0 {
+    $puppetgem = 'puppet_gem'
+  } else {
+    $puppetgem = 'gem'
+  }
   case $::operatingsystem {
     "Debian", "Ubuntu": {
       $rubydevel_package = "ruby-dev"
