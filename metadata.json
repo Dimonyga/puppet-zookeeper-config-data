@@ -1,5 +1,5 @@
 {
-  "name": "Dimonyga-puppet-zookeeper-config-data",
+  "name": "dimonyga-zk_puppet",
   "version": "1.0.4",
   "author": "manos",
   "summary": "This module enables other classes to get of put data directly from and to zookeeper without using hiera",
@@ -34,7 +34,7 @@
       "8"
     ]
   }
-],
+  ],
   "dependencies": [
     { "name": "puppetlabs/stdlib", "version_requirement": ">= 3.2.0" },
     { "name":"puppetlabs/ruby","version_requirement":">= 0.4.0" },
