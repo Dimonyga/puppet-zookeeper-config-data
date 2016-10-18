@@ -7,6 +7,7 @@
 ##Module based on
 
 https://github.com/ConclusionMC/puppet-zookeeper-config-data
+
 https://github.com/manos/puppet-zookeeper-config-data
 
 ##Installation
