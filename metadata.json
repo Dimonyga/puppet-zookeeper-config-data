@@ -1,6 +1,6 @@
 {
-  "name": "Dimonyga/puppet-zookeeper-config-data",
-  "version": "1.0.2",
+  "name": "Dimonyga-puppet-zookeeper-config-data",
+  "version": "1.0.4",
   "author": "manos",
   "summary": "This module enables other classes to get of put data directly from and to zookeeper without using hiera",
   "license": "Apache-2.0",
