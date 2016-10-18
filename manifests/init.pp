@@ -19,11 +19,10 @@ class zk_puppet inherits zk_puppet::params {
       ]
     }
 
-  if ! defined (Package[$rubydevel_package]) {
-    package { $rubydevel_package:
-        ensure => present,
-    }
+  if ! defined (Class['ruby::dev']) {
+    require ruby::dev
   }
+
   if ! defined (Package[$patch_package]) {
     package { $patch_package:
       ensure => present,

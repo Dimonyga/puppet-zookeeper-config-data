@@ -1,21 +1,15 @@
 {
-  "name": "dimonyga-zk_puppet",
-  "version": "1.0.5",
+  "name": "zk_puppet",
+  "version": "1.0.6",
   "author": "manos",
   "summary": "This module enables other classes to get of put data directly from and to zookeeper without using hiera",
   "license": "Apache-2.0",
   "source": "https://github.com/Dimonyga/puppet-zookeeper-config-data.git",
   "project_page": "https://github.com/Dimonyga/puppet-zookeeper-config-data",
   "issues_url": "https://github.com/Dimonyga/puppet-zookeeper-config-data/issues",
-  "requirements": [
-    {
-      "name": "pe",
-      "version_requirement": "3.x"
-    },
-    {
-      "name": "puppet",
-      "version_requirement": ">= 3.0.0 < 5.0.0"
-    }
+  "dependencies": [
+    { "name": "puppetlabs/stdlib", "version_requirement": ">= 3.2.0" },
+    { "name":"puppetlabs/ruby","version_requirement":">= 0.4.0" }
   ],
   "operatingsystem_support": [
   {
@@ -34,11 +28,6 @@
       "8"
     ]
   }
-  ],
-  "dependencies": [
-    { "name": "puppetlabs/stdlib", "version_requirement": ">= 3.2.0" },
-    { "name":"puppetlabs/ruby","version_requirement":">= 0.4.0" },
-
   ],
   "tags": [
     "zookeeper"
