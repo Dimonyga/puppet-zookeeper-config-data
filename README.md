@@ -4,22 +4,15 @@
 
 ---
 
+##Module based on
 
+https://github.com/ConclusionMC/puppet-zookeeper-config-data
+https://github.com/manos/puppet-zookeeper-config-data
 
 ##Installation
 Go to the modules folder and type:
 ```
-# git clone https://github.com/manos/puppet-zookeeper-config-data.git zk_puppet
-```
-
-When including the puppet class, the gem 'zk' should be installed automatically, but it does require these additional packages on the OS (these packages are installed when you include this zk_puppet class):
-* ruby-devel
-* patch
-* gcc
-
-If the gem still won't install properly, make sure the correct gem is used. A puppet master supplies it's own gem executable. So on a puppet master the 'zk' gem needs to be installed manually:
-```
-# /opt/puppetlabs/puppet/bin/gem install zk
+# git clone https://github.com/Dimonyga/puppet-zookeeper-config-data.git zk_puppet
 ```
 
 Using zk-puppet
@@ -27,7 +20,10 @@ Using zk-puppet
 
 Functions available in puppet, provided by this module:
 ```puppet
-include zk_puppet
+  if ! defined (Class['zk_puppet'])
+  {
+    include zk_puppet
+  }
 zkget('/path', 1, ['data']) # returns data at path, with min=1 values returned.
                             # optional 3rd arg is either 'data' or 'children', to
                             # fetch either the data at `path`, or an array of its children

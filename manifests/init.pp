@@ -5,7 +5,7 @@
 # This class installs the pre-requisites.
 # See the lib/ directory for the goodies, and README.md for usage.
 #
-class zk_puppet {
+class zk_puppet inherits zk_puppet::params {
 
     # gems these parser functions require:
     package { ['zk',]:
@@ -13,7 +13,7 @@ class zk_puppet {
         provider => gem,
     }
 
-    $additional_packages = [ 'ruby-devel', 'patch', 'gcc' ]
+    $additional_packages = [ $rubydevel_package, $patch_package , $gcc_package ]
     package { $additional_packages:
         ensure => present,
         before => Package['zk']
