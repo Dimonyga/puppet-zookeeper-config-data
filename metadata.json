@@ -1,6 +1,6 @@
 {
-  "name": "zk_puppet",
-  "version": "1.0.6",
+  "name": "dimonyga/zk_puppet",
+  "version": "1.0.7",
   "author": "manos",
   "summary": "This module enables other classes to get of put data directly from and to zookeeper without using hiera",
   "license": "Apache-2.0",
